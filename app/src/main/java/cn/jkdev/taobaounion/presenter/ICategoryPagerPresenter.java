@@ -1,8 +1,9 @@
 package cn.jkdev.taobaounion.presenter;
 
+import cn.jkdev.taobaounion.base.IBasePresenter;
 import cn.jkdev.taobaounion.view.ICategoryPagerCallback;
 
-public interface ICategoryPagerPresenter<ICategoryPagerCallback> {
+public interface ICategoryPagerPresenter extends IBasePresenter<ICategoryPagerCallback> {
 
     /**
      * 根据分类ID去获取内容

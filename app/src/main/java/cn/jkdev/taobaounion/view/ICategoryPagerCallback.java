@@ -2,9 +2,10 @@ package cn.jkdev.taobaounion.view;
 
 import java.util.List;
 
+import cn.jkdev.taobaounion.base.IBaseCallback;
 import cn.jkdev.taobaounion.model.domain.HomePagerContent;
 
-public interface ICategoryPagerCallback {
+public interface ICategoryPagerCallback extends IBaseCallback {
 
     /**
      * 数据加载回来 --》chengg
@@ -12,33 +13,21 @@ public interface ICategoryPagerCallback {
      */
     void onContentLoad(List<HomePagerContent.DataBean> contents);//拿取数据的contents
 
-    /**
-     * 数据加载中
-     * @param categoryId
-     */
-    void onLoading(int categoryId);
-    /**
-     * 网络错误
-     * @param categoryId
-     */
-    void onError(int categoryId);
-    /**
-     * 数据为空
-     * @param categoryId
-     */
-    void onEmpty(int categoryId);
+    int getCategory();//让UI层去返回
+
+
 
     /**
      * 加载更多网络错误
-     * @param categoryId
+
      */
-    void onLoaderMoreError(int categoryId);
+    void onLoaderMoreError();
 
     /**
      * 没有更多内容
-     * @param categoryId
+
      */
-    void onLoaderMoreEmpty(int categoryId);
+    void onLoaderMoreEmpty();
 
     /**
      * 加载到了更多内容

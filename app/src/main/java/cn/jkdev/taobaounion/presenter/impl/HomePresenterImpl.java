@@ -1,7 +1,5 @@
 package cn.jkdev.taobaounion.presenter.impl;
 
-import android.util.Log;
-
 import java.net.HttpURLConnection;
 
 import cn.jkdev.taobaounion.model.Api;
@@ -53,7 +51,7 @@ public class HomePresenterImpl implements IHomePresenter {
                     LogUtils.i(HomePresenterImpl.this, "请求失败");
 
                     if (mCallback != null) {
-                        mCallback.onNetworkError();
+                        mCallback.onError();
                     }
                 }
 
@@ -64,7 +62,7 @@ public class HomePresenterImpl implements IHomePresenter {
                 //加载失败结果
                 LogUtils.e(HomePresenterImpl.this, "请求失败" + t);
                 if (mCallback != null) {
-                    mCallback.onNetworkError();
+                    mCallback.onError();
                 }
             }
         });
