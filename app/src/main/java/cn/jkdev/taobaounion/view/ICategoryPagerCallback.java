@@ -13,7 +13,7 @@ public interface ICategoryPagerCallback extends IBaseCallback {
      */
     void onContentLoad(List<HomePagerContent.DataBean> contents);//拿取数据的contents
 
-    int getCategory();//让UI层去返回
+    int getCategoryId();//让UI层去返回
 
 
 

@@ -62,9 +62,15 @@ public abstract class BaseFragment extends Fragment {
 
         mBind = ButterKnife.bind(this, rootView);
         initView(rootView);
+        initListener();
         initPresenter();
         loadData();
         return rootView;
+    }
+
+
+    protected void initListener() {
+
     }
 
     protected View loadRootView(LayoutInflater inflater, ViewGroup container) {

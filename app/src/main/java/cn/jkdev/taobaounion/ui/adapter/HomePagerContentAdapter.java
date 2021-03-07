@@ -82,13 +82,13 @@ public class HomePagerContentAdapter extends RecyclerView.Adapter<HomePagerConte
         public void setData(HomePagerContent.DataBean dataBean) {
             Context context = itemView.getContext();
             title.setText(dataBean.getTitle());
-            LogUtils.d(this,"url ---> " + dataBean.getPict_url());
+//            LogUtils.d(this,"url ---> " + dataBean.getPict_url());
             Glide.with(context).load(UrlUtils.getCoverPath(dataBean.getPict_url())).into(cover);//图片数据绑上
             String finalPrice = dataBean.getZk_final_price();
             long coupon_amount = dataBean.getCoupon_amount();
-            LogUtils.d(this,"final price --- > " + finalPrice);
+//            LogUtils.d(this,"final price --- > " + finalPrice);
             float resultPrice = Float.parseFloat(finalPrice) - coupon_amount;
-            LogUtils.d(this,"resultPrice -- > " + resultPrice);
+//            LogUtils.d(this,"resultPrice -- > " + resultPrice);
             finalPriceTv.setText(String.format("%.2f ",resultPrice  ));
             offPriceTv.setText(String.format(context.getString(R.string.text_goods_off_price),coupon_amount));
             originalPriceTv.setText(String.format(context.getString(R.string.text_goods_original_price),finalPrice));
